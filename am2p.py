@@ -187,7 +187,7 @@ if __name__ == '__main__':
       if resources[i]['name'] in PREDEFINED_RESOURCES:
         name = resources[i]['name']
         print(resources[i]['name'])
-        exit(5)
+        #exit(5)
         resource[name] = Resource()
         resource[name].name = resources[i]['name']
         resource[name].resourceId = resources[i]['id']
@@ -213,7 +213,7 @@ if __name__ == '__main__':
         name = resources[i]['name']
         print(resources[i]['name'])
         print(resources[i]['type'])
-        exit(6)
+        #exit(6)
         resource[name] = Resource()
         resource[name].name = resources[i]['name']
         resource[name].resourceId = resources[i]['id']
