@@ -1,7 +1,7 @@
 provider "aws" {
   region = "eu-central-1"
   access_key = ${{secrets.AWS_FRACE}}
-  secret_key = ${{secrets.AWS_KEY}}
+  secret_key = ${{secrets.AWS_SECRET}}
 
 }
 
