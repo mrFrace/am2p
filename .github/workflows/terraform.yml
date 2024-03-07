@@ -80,7 +80,10 @@ jobs:
         AWS_ACCESS_SECRET_ID:  ${{ secrets.AWS_SECRET }}
         TF_VAR_aws_access_key: ${{ secrets.AWS_FRACE }}
         TF_VAR_aws_accesss_secret:  ${{ secrets.AWS_SECRET }} 
-      run: terraform init
+      run: |
+        export AWS_ACCESS_KEY_ID=$TF_VAR_aws_access_key
+        export AWS_ACCESS_SECRET_ID=$TF_VAR_aws_accesss_secret
+        terraform init
 
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Formatterraform plan
