@@ -7,6 +7,7 @@ variable "aws_access_secret" {
   description = "AWS Access Secret"
   type        = string
 }
+
 provider "aws" {
   region = "eu-central-1"
   access_key = var.aws_access_key
