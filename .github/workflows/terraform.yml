@@ -71,6 +71,8 @@ jobs:
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
       uses: hashicorp/setup-terraform@v2
+
+    - name: Run it
       env:
         TF_VAR_aws_access_key: ${{ secrets.AWS_FRACE }}
         TF_VAR_aws_accesss_secret:  ${{ secrets.AWS_SECRET }} 
