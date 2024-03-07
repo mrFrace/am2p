@@ -80,15 +80,24 @@ jobs:
 
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Formatterraform plan
+      env:
+        TF_VAR_aws_access_key: ${{ secrets.AWS_FRACE }}
+        TF_VAR_aws_accesss_secret:  ${{ secrets.AWS_SECRET }} 
       run:
         terraform plan
 
     # Generates an execution plan for Terraform
     - name: Terraform Apply
       if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
+      env:
+        TF_VAR_aws_access_key: ${{ secrets.AWS_FRACE }}
+        TF_VAR_aws_accesss_secret:  ${{ secrets.AWS_SECRET }} 
       run: terraform apply -auto-approve -input=false
 
       # On push to "main", build or change infrastructure according to Terraform configuration files
       # Note: It is recommended to set up a required "strict" status check in your repository for "Terraform Cloud". See the documentation on "strict" required status checks for more information: https://help.github.com/en/github/administering-a-repository/types-of-required-status-checks
     - name: Terraform Destroy
+      env:
+        TF_VAR_aws_access_key: ${{ secrets.AWS_FRACE }}
+        TF_VAR_aws_accesss_secret:  ${{ secrets.AWS_SECRET }}
       run: terraform destroy --auto-approve
