@@ -1,13 +1,4 @@
 
-variable "aws_access_key" {
-  description = "AWS Access Key"
-  type        = string
-}
-variable "aws_access_secret" {
-  description = "AWS Access Secret"
-  type        = string
-}
-
 provider "aws" {
   region = "eu-central-1"
 
