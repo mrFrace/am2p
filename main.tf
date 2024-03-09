@@ -6,11 +6,22 @@ terraform {
     }
   }
 }
-
+variable "AWS_ACCESS_KEY_ID" {
+  type      = string
+  sensitive = true
+}
+variable "AWS_ACCESS_SECRET_ID" {
+  type      = string
+  sensitive = true
+}
+variable "mssql_login_pwd" {
+  type      = string
+  sensitive = true
+}
 provider "aws" {
   region = "eu-central-1"
-  access_key = "{AWS_ACCESS_KEY_ID}"
-  secret_key = "{AWS_ACCESS_SECRET_ID}"
+  access_key = var.AWS_ACCESS_KEY_ID
+  secret_key = var.AWS_ACCESS_SECRET_ID
 }
 
 data "aws_eips" "helper_eips" {
