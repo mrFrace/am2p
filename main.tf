@@ -9,8 +9,8 @@ terraform {
 
 provider "aws" {
   region = "eu-central-1"
-  access_key = {AWS_ACCESS_KEY_ID}
-  secret_key = {AWS_ACCESS_SECRET_ID}
+  access_key = "{AWS_ACCESS_KEY_ID}"
+  secret_key = "{AWS_ACCESS_SECRET_ID}"
 }
 
 data "aws_eips" "helper_eips" {
