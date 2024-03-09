@@ -9,12 +9,7 @@ terraform {
 
 provider "aws" {
   region = "eu-central-1
-
 }
-
-
-
-
 
 data "aws_eips" "helper_eips" {
   tags = {
