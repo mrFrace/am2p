@@ -14,10 +14,7 @@ variable "AWS_ACCESS_SECRET_ID" {
   type      = string
   sensitive = true
 }
-variable "mssql_login_pwd" {
-  type      = string
-  sensitive = true
-}
+
 provider "aws" {
   region = "eu-central-1"
   access_key = var.AWS_ACCESS_KEY_ID
